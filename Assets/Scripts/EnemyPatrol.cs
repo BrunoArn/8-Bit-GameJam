@@ -34,9 +34,11 @@ public class EnemyPatrol : MonoBehaviour
 
         Vector3 worldMin = tilemap.transform.TransformPoint(bounds.min);
         Vector3 worldMax = tilemap.transform.TransformPoint(bounds.max);
+        Debug.Log($"mininmo é [{worldMin.x}x] e [{worldMin.y}y]");
+        Debug.Log($"maximo é [{worldMax.x}x] e [{worldMax.y}y]");
 
-        float x = Random.Range(worldMin.x, worldMax.x);
-        float y = Random.Range(worldMin.y, worldMax.y);
+        float x = Random.Range(worldMin.x - 0.5f, worldMax.x - 0.5f);
+        float y = Random.Range(worldMin.y - 0.5f, worldMax.y - 0.5f);
         
         targetPosition = new Vector2(x, y);
     }

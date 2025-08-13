@@ -5,6 +5,7 @@ public class PickUps : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(this.gameObject);
+        if(!collision.GetComponent<PlayerProjectile>())
+            Destroy(this.gameObject);
     }
 }
