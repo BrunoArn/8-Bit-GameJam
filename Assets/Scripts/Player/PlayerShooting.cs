@@ -17,6 +17,11 @@ public class PlayerShooting : MonoBehaviour
     private Vector2 lastAim = Vector2.right;
     private float projectileZAngle;
     private Vector3 spawnPos;
+    private Upgrades upgrades;
+
+    private void Awake() {
+        upgrades = GetComponent<Upgrades>();
+    }
 
     void Update()
     {
@@ -29,7 +34,14 @@ public class PlayerShooting : MonoBehaviour
         {
             UpdateAim(inputValue);
             Shoot();
-            fireCooldown = fireRate;
+
+            //cehck doido de merda
+            float actualFireRate = fireRate - upgrades.extraFireRate;
+            if (actualFireRate <= 0)
+            {
+                actualFireRate = 0.1f;
+            }
+            fireCooldown = actualFireRate;
         }
     }
     private void UpdateAim(Vector2 inputValue)
@@ -50,7 +62,7 @@ public class PlayerShooting : MonoBehaviour
     {
         var go = Instantiate(projectilePrefab, spawnPos, Quaternion.Euler(0, 0, projectileZAngle));
         var projectile = go.GetComponent<PlayerProjectile>();
-        projectile.UpdateProjectileInfo(0, 1);
+        projectile.UpdateProjectileInfo(upgrades.extraDamage, upgrades.projectileSpeedMultiplier, upgrades.extraFireDistance);
 
     }
 }

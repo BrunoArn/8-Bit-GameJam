@@ -24,14 +24,16 @@ public class PlayerProjectile : MonoBehaviour
         if (collision.gameObject.TryGetComponent<Health>(out Health enemyHealth) && !collision.GetComponent<PlayerMovement>())
         {
             enemyHealth.TakeDamage(damage);
+            Debug.Log(damage);
             Destroy(this.gameObject);
         }
     }
 
-    public void UpdateProjectileInfo(int extraDamage, int speedMultiplier)
+    public void UpdateProjectileInfo(int extraDamage, float speedMultiplier, float extraProjectileRange)
     {
         damage += extraDamage;
         projectileSpeed *= speedMultiplier;
+        projectileRange += extraProjectileRange;
     }
 
      private void MoveProjectile()

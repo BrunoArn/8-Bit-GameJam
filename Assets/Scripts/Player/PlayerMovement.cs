@@ -8,10 +8,12 @@ public class PlayerMovement : MonoBehaviour
     public PlayerControls playerControls;
     private Vector2 movement;
     private Rigidbody2D rb;
+    private Upgrades upgrade;
 
 
     private void Awake()
     {
+        upgrade = GetComponent<Upgrades>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -32,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
-        rb.MovePosition(rb.position + movement * (moveSpeed * Time.deltaTime));
+        rb.MovePosition(rb.position + movement * ((moveSpeed + upgrade.extraMovespeed) * Time.deltaTime));
     }
 
 }
