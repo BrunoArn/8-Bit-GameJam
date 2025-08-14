@@ -17,9 +17,7 @@ public class Health : MonoBehaviour
     }
 
     public void TakeDamage(int amount)
-    {
-        if ((currentHealth + amount) > maxHealth) return;
-        
+    {       
         currentHealth -= amount;
         onTakeDamage?.Invoke();
 
@@ -28,6 +26,14 @@ public class Health : MonoBehaviour
             onDeath?.Invoke();
             Destroy(this.gameObject);
         }
+    }
+
+    public void Heal(int amount)
+    {
+        if ((currentHealth + amount) > maxHealth) return;
+
+        currentHealth += amount;
+        onTakeDamage?.Invoke();
     }
 
     public void RaiseMaxHealth(int amount)

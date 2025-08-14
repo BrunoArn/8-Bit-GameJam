@@ -762,6 +762,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 3667250022486202770, guid: 23955a10f42e06245be8e218babea0f3, type: 3}
   shootOrigin: {fileID: 1145785509}
   spawnDistance: 1
+  fireRate: 0.5
 --- !u!1 &720866289
 GameObject:
   m_ObjectHideFlags: 0
@@ -6982,10 +6983,6 @@ PrefabInstance:
     - target: {fileID: 6437356993856063434, guid: a00b09222cd0a044390c3bbd85ca596d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8728877243753914475, guid: a00b09222cd0a044390c3bbd85ca596d, type: 3}
-      propertyPath: objectHealth
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

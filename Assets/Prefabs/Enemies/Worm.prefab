@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
-  maxHealth: 5
+  maxHealth: 3
 --- !u!114 &957437667163225786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b4b2210f5174cc4ab278aea5fa5ce90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectHealth: {fileID: 0}
+  objectHealth: {fileID: 2150995720148377552}
   itemPrefab: {fileID: 4678068514249304371, guid: 12fd9b31c0b3be549b54e5bf70468cd5, type: 3}
 --- !u!70 &3507942631458632501
 CapsuleCollider2D:

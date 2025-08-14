@@ -26,7 +26,7 @@ public class EnemyPatrol : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.GetComponent<PlayerMovement>())
+        if (!collision.GetComponent<PlayerMovement>() || !collision.GetComponent<PlayerProjectile>())
         {
             StartCoroutine(WaitToMove());
         }
@@ -50,15 +50,10 @@ public class EnemyPatrol : MonoBehaviour
 
         Vector3 worldMin = tilemap.transform.TransformPoint(bounds.min);
         Vector3 worldMax = tilemap.transform.TransformPoint(bounds.max);
-        Debug.Log($"mininmo é [{worldMin.x}x] e [{worldMin.y}y]");
-        Debug.Log($"maximo é [{worldMax.x}x] e [{worldMax.y}y]");
 
         targetPosition = GetRandomPositionNear(transform.position);
         targetPosition.x = Mathf.Clamp(targetPosition.x, worldMin.x, worldMax.x);
         targetPosition.y = Mathf.Clamp(targetPosition.y, worldMin.y, worldMax.y);
-        Debug.Log($"taget position [X:{targetPosition.x}] [Y:{targetPosition.y}]");
-
-
     }
 
     private Vector2 GetRandomPositionNear(Vector2 center)
