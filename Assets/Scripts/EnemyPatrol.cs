@@ -1,12 +1,20 @@
 
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
 public class EnemyPatrol : MonoBehaviour
 {
+    [Header("Movement status")]
     [SerializeField] float moveSpeed = 2f;
+    [SerializeField] float walkRadius = 3f;
+    [SerializeField] float waitToMove = 1.5f;
+    [Header("Map info")]
     [SerializeField] Tilemap tilemap;
+
     private Vector2 targetPosition;
+
+    private bool isMoving = true;
 
     private void Start()
     {
@@ -16,16 +24,24 @@ public class EnemyPatrol : MonoBehaviour
     {
         MoveTowardTarget();
     }
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (!collision.GetComponent<PlayerMovement>())
+        {
+            StartCoroutine(WaitToMove());
+        }
+    }
     void MoveTowardTarget()
     {
-        transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
-
-        if (Vector2.Distance(transform.position, targetPosition) < 0.1f)
+        if (isMoving)
         {
-            SetNewTargetPosition();
+            transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+
+            if (Vector2.Distance(transform.position, targetPosition) < 0.3f)
+            {
+                StartCoroutine(WaitToMove());
+            }
         }
-
-
     }
 
     private void SetNewTargetPosition()
@@ -37,9 +53,25 @@ public class EnemyPatrol : MonoBehaviour
         Debug.Log($"mininmo é [{worldMin.x}x] e [{worldMin.y}y]");
         Debug.Log($"maximo é [{worldMax.x}x] e [{worldMax.y}y]");
 
-        float x = Random.Range(worldMin.x - 0.5f, worldMax.x - 0.5f);
-        float y = Random.Range(worldMin.y - 0.5f, worldMax.y - 0.5f);
-        
-        targetPosition = new Vector2(x, y);
+        targetPosition = GetRandomPositionNear(transform.position);
+        targetPosition.x = Mathf.Clamp(targetPosition.x, worldMin.x, worldMax.x);
+        targetPosition.y = Mathf.Clamp(targetPosition.y, worldMin.y, worldMax.y);
+        Debug.Log($"taget position [X:{targetPosition.x}] [Y:{targetPosition.y}]");
+
+
+    }
+
+    private Vector2 GetRandomPositionNear(Vector2 center)
+    {
+        Vector2 randomOffSet = Random.insideUnitCircle * walkRadius;
+        return center + randomOffSet;
+    }
+
+    private IEnumerator WaitToMove()
+    {
+        isMoving = false;
+        yield return new WaitForSeconds(waitToMove);
+        SetNewTargetPosition();
+        isMoving = true;
     }
 }

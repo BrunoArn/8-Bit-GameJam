@@ -18,6 +18,8 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
+        if ((currentHealth + amount) > maxHealth) return;
+        
         currentHealth -= amount;
         onTakeDamage?.Invoke();
 

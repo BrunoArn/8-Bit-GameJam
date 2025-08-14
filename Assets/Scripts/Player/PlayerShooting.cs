@@ -46,7 +46,6 @@ public class PlayerShooting : MonoBehaviour
         Vector3 direction = (Vector3)lastAim.normalized;
 
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        Debug.Log(angle);
 
         var go = Instantiate(projectilePrefab, spawnPos, Quaternion.Euler(0,0, angle));
         var projectile = go.GetComponent<PlayerProjectile>();
