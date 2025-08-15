@@ -24,7 +24,6 @@ public class PlayerProjectile : MonoBehaviour
         if (collision.gameObject.TryGetComponent<Health>(out Health enemyHealth) && !collision.GetComponent<PlayerMovement>())
         {
             enemyHealth.TakeDamage(damage);
-            Debug.Log(damage);
             Destroy(this.gameObject);
         }
     }

@@ -10,10 +10,16 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Upgrades upgrade;
 
+    private Animator myAnimator;
+    private SpriteRenderer spriteRenderer;
+    
+
 
     private void Awake()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
         upgrade = GetComponent<Upgrades>();
+        myAnimator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -30,6 +36,16 @@ public class PlayerMovement : MonoBehaviour
     private void PlayerInput()
     {
         movement = playerControls.Combat.Move.ReadValue<Vector2>();
+        if (movement != Vector2.zero)
+        {
+            myAnimator.SetBool("isMoving", true);
+        }
+        else
+        {
+            myAnimator.SetBool("isMoving", false);
+        }
+        if(movement.x < 0) { spriteRenderer.flipX = true; } 
+        else if (movement.x > 0) { spriteRenderer.flipX = false; } 
     }
 
     private void Move()
