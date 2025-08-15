@@ -142,6 +142,7 @@ MonoBehaviour:
   damage: 1
   projectileSpeed: 10
   projectileRange: 4
+  particle: {fileID: 2598957552336512985, guid: f5c8b231565ba431dae83073e970b988, type: 3}
 --- !u!50 &1278841595969128281
 Rigidbody2D:
   serializedVersion: 5

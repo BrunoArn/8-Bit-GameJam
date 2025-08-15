@@ -1,3 +1,4 @@
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -6,6 +7,8 @@ public class PlayerProjectile : MonoBehaviour
     public int damage = 1;
     public float projectileSpeed = 12f;
     [SerializeField] float projectileRange = 10f;
+    [SerializeField] private GameObject particle;
+    
 
     private Vector2 startPosition;
     void Start()
@@ -24,6 +27,7 @@ public class PlayerProjectile : MonoBehaviour
         if (collision.gameObject.TryGetComponent<Health>(out Health enemyHealth) && !collision.GetComponent<PlayerMovement>())
         {
             enemyHealth.TakeDamage(damage);
+            Instantiate(particle, transform.position, quaternion.identity);
             Destroy(this.gameObject);
         }
     }
@@ -44,6 +48,7 @@ public class PlayerProjectile : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, startPosition) > projectileRange)
         {
+            //Instantiate(particle, transform.position, quaternion.identity);
             Destroy(this.gameObject);
         }
     }

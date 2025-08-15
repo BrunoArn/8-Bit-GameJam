@@ -36,15 +36,11 @@ public class PlayerMovement : MonoBehaviour
     private void PlayerInput()
     {
         movement = playerControls.Combat.Move.ReadValue<Vector2>();
-        if (movement != Vector2.zero)
-        {
-            myAnimator.SetBool("isMoving", true);
-        }
-        else
-        {
-            myAnimator.SetBool("isMoving", false);
-        }
-        if(movement.x < 0) { spriteRenderer.flipX = true; } 
+        
+        if (movement != Vector2.zero) { myAnimator.SetBool("isMoving", true); }
+        else { myAnimator.SetBool("isMoving", false); }
+        
+        if (movement.x < 0) { spriteRenderer.flipX = true; }
         else if (movement.x > 0) { spriteRenderer.flipX = false; } 
     }
 
