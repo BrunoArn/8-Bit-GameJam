@@ -33,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 964433879923710371}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.14, y: 1.48, z: 0}
+  m_LocalPosition: {x: 5.12, y: -1.96, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -59,6 +59,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -80,10 +82,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1458591207, guid: d636296866749a848828c35952fa4ff9, type: 3}
+  m_Sprite: {fileID: -5676068773701075991, guid: d0dc0b486984d4702b1d9eeadd2df3d4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -150,7 +153,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectHealth: {fileID: 2150995720148377552}
-  itemPrefab: {fileID: 4678068514249304371, guid: 12fd9b31c0b3be549b54e5bf70468cd5, type: 3}
+  dropTable:
+  - item: {fileID: 4678068514249304371, guid: 12fd9b31c0b3be549b54e5bf70468cd5, type: 3}
+    dropChance: 15.6
+  - item: {fileID: 3981367317126196686, guid: fc2f3096ff8ea5140aa20807f29d806b, type: 3}
+    dropChance: 100
 --- !u!70 &3507942631458632501
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -185,8 +192,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.008789461, y: 0.33548287}
-  m_Size: {x: 2.0021124, y: 0.66545075}
+  m_Offset: {x: 0.008789554, y: -0.38619414}
+  m_Size: {x: 1.0817167, y: 0.30984387}
   m_Direction: 1
 --- !u!50 &2942326464917664029
 Rigidbody2D:
