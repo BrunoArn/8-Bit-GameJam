@@ -1,0 +1,51 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
+
+public class MapManager : MonoBehaviour
+{
+    [SerializeField] private MapDatabase mapDatabase;
+    [SerializeField] private Transform mapSpawnPoint;
+    [SerializeField] private FlowerExperience playerExperience;
+
+    [SerializeField] private LevelHole hole;
+
+    private int mapIndex = 0;
+    //private List<String> usedMaps = new List<String>();
+    [SerializeField] private GameObject actualMap;
+
+    private void Start()
+    {
+        hole.OnNextLevelTrigger += SpawnNextMap;
+    }
+
+    public void SpawnNextMap()
+    {
+        mapIndex++;
+
+        bool isStore = mapIndex % 5 == 0;
+        int mapDificulty = playerExperience.level;
+
+        var availableMaps = mapDatabase.mapsAvailable
+        .Where(map => map.mapType == (isStore ? MapType.store : MapType.normal))
+        .Where(map => map.dificulty <= mapDificulty).ToList();
+        //.Where(map => !usedMaps.Contains(map.mapId)).ToList();
+
+        if (availableMaps.Count == 0)
+        {
+            Debug.Log("ta sem mapa");
+            return;
+        }
+
+        var choosenMap = availableMaps[UnityEngine.Random.Range(0, availableMaps.Count - 1)];
+        // usedMaps.Add(choosenMap.mapId);
+
+        if (actualMap != null)
+        {
+            Destroy(actualMap);
+        }
+        actualMap = Instantiate(choosenMap.mapPrefab, mapSpawnPoint.position, Quaternion.identity);
+    }
+
+}
