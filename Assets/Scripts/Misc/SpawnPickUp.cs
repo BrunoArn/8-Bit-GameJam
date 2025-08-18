@@ -16,6 +16,7 @@ public class SpawnPickUp : MonoBehaviour
     private void SpawnItem(GameObject itemPrefab)
     {
         Instantiate(itemPrefab, transform.position, quaternion.identity);
+        
     }
 
     private void LootRoll()
