@@ -8,7 +8,7 @@ public class Health : MonoBehaviour
     public int maxHealth = 6;
 
     public event Action onTakeDamage;
-    public event Action onDeath;
+    public event Action<GameObject> onDeath;
     public event Action onRaiseMaxHealth;
 
     void Start()
@@ -23,7 +23,7 @@ public class Health : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            onDeath?.Invoke();
+            onDeath?.Invoke(this.gameObject);
             Destroy(this.gameObject);
         }
     }

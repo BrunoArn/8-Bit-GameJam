@@ -55,7 +55,7 @@ public class FlowerExperience : MonoBehaviour
     public void ReceiveExperience(int exp)
     {
         experience += exp;
-        OnExpReceived.Invoke(experience, expToLevel);
+        OnExpReceived?.Invoke(experience, expToLevel);
         if (experience >= expToLevel)
         {
             experience -= expToLevel;

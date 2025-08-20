@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 1440275508520808813}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.43655, y: -1.75341, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4371,7 +4371,7 @@ GameObject:
   - component: {fileID: 3653203295269416809}
   - component: {fileID: 1648640519958059459}
   - component: {fileID: 5635189635261080341}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GoundLayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6468,6 +6468,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 693385458832660549}
+  - component: {fileID: 498807550683560407}
   m_Layer: 0
   m_Name: Enemies
   m_TagString: Untagged
@@ -6490,3 +6491,15 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2351916826517867092}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &498807550683560407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8957998910479597423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36eff51a4c4b22d468ce6d9ca45f3a8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemiesManager

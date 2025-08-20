@@ -65,12 +65,10 @@ public class EnemyPatrol : MonoBehaviour
         //Debug.Log($"target position after clamp is: [{targetPosition.x}] X, [{targetPosition.y}] Y");
         if (IsPathClear(transform.position, nextTargetPosition))
         {
-            Debug.Log("da pra apssar");
             targetPosition = nextTargetPosition;
         }
         else
         {
-            Debug.Log("nao da pra apssar");
             SetNewTargetPosition();
         }
     }

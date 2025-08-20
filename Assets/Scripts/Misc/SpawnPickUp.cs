@@ -19,7 +19,7 @@ public class SpawnPickUp : MonoBehaviour
         
     }
 
-    private void LootRoll()
+    private void LootRoll(GameObject deadObject)
     {
         foreach (var drops in dropTable)
         {
