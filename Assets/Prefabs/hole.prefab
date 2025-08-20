@@ -143,6 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelHole
   OnNextLevelTrigger: {fileID: 11400000, guid: c9ee8a8e100df9d4db662da5bbb1ddb1, type: 2}
+  spawnAnim: {fileID: 7400000, guid: e47c046b8f5e72743a4c7806ed0caae2, type: 2}
 --- !u!95 &3902637124326675251
 Animator:
   serializedVersion: 7

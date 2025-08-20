@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 2747348383306266650}
   - component: {fileID: 2040772453514234179}
   - component: {fileID: 5029053513924370253}
+  - component: {fileID: 236290632091830140}
   m_Layer: 0
   m_Name: Worm (1)
   m_TagString: Untagged
@@ -246,6 +247,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &236290632091830140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508217804689335003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcb646909fdd2224c9a1edd139180836, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationHandler
+  myAnimator: {fileID: 5029053513924370253}
 --- !u!1 &1045041367570604358
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,6 +277,7 @@ GameObject:
   - component: {fileID: 1794056501387665320}
   - component: {fileID: 2950400526315867239}
   - component: {fileID: 2511549333219202915}
+  - component: {fileID: 5496971169483553077}
   m_Layer: 0
   m_Name: Worm (3)
   m_TagString: Untagged
@@ -492,6 +507,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5496971169483553077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1045041367570604358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcb646909fdd2224c9a1edd139180836, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationHandler
+  myAnimator: {fileID: 2511549333219202915}
 --- !u!1 &1153758647295243707
 GameObject:
   m_ObjectHideFlags: 0
@@ -558,6 +586,7 @@ GameObject:
   - component: {fileID: 2797774275294177156}
   - component: {fileID: 8549277229779785254}
   - component: {fileID: 1455788117065262097}
+  - component: {fileID: 7209998957236083274}
   m_Layer: 0
   m_Name: Worm (2)
   m_TagString: Untagged
@@ -787,6 +816,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7209998957236083274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370709284723407783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcb646909fdd2224c9a1edd139180836, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationHandler
+  myAnimator: {fileID: 1455788117065262097}
 --- !u!1 &2502972224755230555
 GameObject:
   m_ObjectHideFlags: 0
@@ -5127,6 +5169,7 @@ GameObject:
   - component: {fileID: 1555364115259479546}
   - component: {fileID: 4071700887517483301}
   - component: {fileID: 6028756297586524131}
+  - component: {fileID: 8591978073872955578}
   m_Layer: 0
   m_Name: Worm
   m_TagString: Untagged
@@ -5356,6 +5399,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8591978073872955578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4532098672170826583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcb646909fdd2224c9a1edd139180836, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationHandler
+  myAnimator: {fileID: 6028756297586524131}
 --- !u!1 &4664512820539544942
 GameObject:
   m_ObjectHideFlags: 0

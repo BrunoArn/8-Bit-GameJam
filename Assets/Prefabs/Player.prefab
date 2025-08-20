@@ -317,7 +317,12 @@ MonoBehaviour:
   - {fileID: 859563606, guid: 412595d0a9b88445d83912bbbf64d13a, type: 3}
   - {fileID: 985205284, guid: 412595d0a9b88445d83912bbbf64d13a, type: 3}
   - {fileID: 985205284, guid: 412595d0a9b88445d83912bbbf64d13a, type: 3}
-  upgradesList: []
+  upgradesList:
+  - {fileID: 2906947818664843898, guid: 75ec049f32e2ea94b876431fa42fc3cf, type: 3}
+  - {fileID: 2396802931671157089, guid: 74924914782ea754995b06f63a04ca6f, type: 3}
+  - {fileID: 421250351074085569, guid: 61e970fe982de2f499d43d244875c9dd, type: 3}
+  - {fileID: 6893578537175610281, guid: 6ae29684bc022054da22f8ad14be851d, type: 3}
+  - {fileID: 2898828270810311184, guid: f0b0fea71c0284e448056758ee320cc9, type: 3}
 --- !u!210 &4809752645851939580
 SortingGroup:
   m_ObjectHideFlags: 0
