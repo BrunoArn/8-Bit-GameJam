@@ -23,6 +23,7 @@ public class PickUps : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        GetComponent<Collider2D>().enabled = false;
     }
 
     private void Start()
@@ -72,6 +73,7 @@ public class PickUps : MonoBehaviour
             transform.position = Vector2.Lerp(startPoint, endPoint, linearT) + new Vector2(0f, height);
             yield return null;
         }
+        GetComponent<Collider2D>().enabled = true;
     }
 
 }

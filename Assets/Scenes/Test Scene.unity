@@ -131,6 +131,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7563453258213575868, guid: 21820b84708200544b57f3213794a099, type: 3}
+      propertyPath: upgradesList.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7563453258213575868, guid: 21820b84708200544b57f3213794a099, type: 3}
+      propertyPath: 'upgradesList.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2906947818664843898, guid: 75ec049f32e2ea94b876431fa42fc3cf, type: 3}
+    - target: {fileID: 7563453258213575868, guid: 21820b84708200544b57f3213794a099, type: 3}
+      propertyPath: 'upgradesList.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2396802931671157089, guid: 74924914782ea754995b06f63a04ca6f, type: 3}
+    - target: {fileID: 7563453258213575868, guid: 21820b84708200544b57f3213794a099, type: 3}
+      propertyPath: 'upgradesList.Array.data[2]'
+      value: 
+      objectReference: {fileID: 421250351074085569, guid: 61e970fe982de2f499d43d244875c9dd, type: 3}
+    - target: {fileID: 7563453258213575868, guid: 21820b84708200544b57f3213794a099, type: 3}
+      propertyPath: 'upgradesList.Array.data[3]'
+      value: 
+      objectReference: {fileID: 6893578537175610281, guid: 6ae29684bc022054da22f8ad14be851d, type: 3}
+    - target: {fileID: 7563453258213575868, guid: 21820b84708200544b57f3213794a099, type: 3}
+      propertyPath: 'upgradesList.Array.data[4]'
+      value: 
+      objectReference: {fileID: 2898828270810311184, guid: f0b0fea71c0284e448056758ee320cc9, type: 3}
     - target: {fileID: 8305477260860144635, guid: 21820b84708200544b57f3213794a099, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.07412821

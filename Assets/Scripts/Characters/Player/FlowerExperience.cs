@@ -10,7 +10,7 @@ public class FlowerExperience : MonoBehaviour
     public int level = 1;
     [SerializeField] private float expToLevel = 10f;
     [SerializeField] private float expLevelFactor = 0.1f;
-    private float expFactor = 1f;
+    private readonly float expFactor = 1f;
 
     private SpriteRenderer mySpriteRenderer;
 
@@ -22,7 +22,7 @@ public class FlowerExperience : MonoBehaviour
     [SerializeField] private Sprite[] sprites;
 
     [Header("Upgrades")]
-    [SerializeField] private List<GameObject> upgradesList = new List<GameObject>();
+    [SerializeField] private List<GameObject> upgradesList = new();
 
     private void Awake()
     {
@@ -40,7 +40,7 @@ public class FlowerExperience : MonoBehaviour
     void Start()
     {
         ReceiveExperience(0); // so pra atualizar o slider
-        OnLevelUP(level);
+        OnLevelUP?.Invoke(level);
     }
 
     private void UpdateSpriteImage()
@@ -71,6 +71,13 @@ public class FlowerExperience : MonoBehaviour
         level++;
         expToLevel *= expFactor + expLevelFactor;
         OnLevelUP?.Invoke(level);
+        SpawnPowerUp();
         //dopra os upgrades;
+    }
+
+    private void SpawnPowerUp()
+    {
+        int randomUpgrade = UnityEngine.Random.Range(0, upgradesList.Count);
+        Instantiate(upgradesList[randomUpgrade], transform.position + new Vector3(0,1,0), Quaternion.identity);
     }
 }
