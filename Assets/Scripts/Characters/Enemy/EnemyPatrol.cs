@@ -11,6 +11,8 @@ public class EnemyPatrol : MonoBehaviour
     [SerializeField] float waitToMove = 1.5f;
     [Header("Map info")]
     [SerializeField] Tilemap tilemap;
+    [SerializeField] Vector2 borderOffSetPositive;
+    [SerializeField] Vector2 borderOffSetNegative;
 
     private Vector2 targetPosition;
 
@@ -20,10 +22,12 @@ public class EnemyPatrol : MonoBehaviour
     {
         SetNewTargetPosition();
     }
+
     private void Update()
     {
         MoveTowardTarget();
     }
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (!collision.GetComponent<PlayerMovement>() || !collision.GetComponent<PlayerProjectile>())
@@ -31,6 +35,7 @@ public class EnemyPatrol : MonoBehaviour
             StartCoroutine(WaitToMove());
         }
     }
+
     void MoveTowardTarget()
     {
         if (isMoving)
@@ -46,14 +51,20 @@ public class EnemyPatrol : MonoBehaviour
 
     private void SetNewTargetPosition()
     {
-        Bounds bounds = tilemap.localBounds;
+        BoundsInt bounds = tilemap.cellBounds;
 
         Vector3 worldMin = tilemap.transform.TransformPoint(bounds.min);
         Vector3 worldMax = tilemap.transform.TransformPoint(bounds.max);
 
         targetPosition = GetRandomPositionNear(transform.position);
-        targetPosition.x = Mathf.Clamp(targetPosition.x, worldMin.x, worldMax.x);
-        targetPosition.y = Mathf.Clamp(targetPosition.y, worldMin.y, worldMax.y);
+        //Debug.Log($"target position is: [{targetPosition.x}] X, [{targetPosition.y}] Y");
+
+        targetPosition.x = Mathf.Clamp(targetPosition.x, worldMin.x + borderOffSetPositive.x, worldMax.x - borderOffSetNegative.x);
+        targetPosition.y = Mathf.Clamp(targetPosition.y, worldMin.y + borderOffSetPositive.y, worldMax.y - borderOffSetNegative.y);
+
+        //Debug.Log($"world position is [minX {worldMin.x}, maxX {worldMax.x}], [minY{worldMin.y}, maxY {worldMax.y}]\n");
+
+        //Debug.Log($"target position after clamp is: [{targetPosition.x}] X, [{targetPosition.y}] Y");
     }
 
     private Vector2 GetRandomPositionNear(Vector2 center)
