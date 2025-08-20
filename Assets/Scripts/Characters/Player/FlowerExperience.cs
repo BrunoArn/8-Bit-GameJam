@@ -15,6 +15,7 @@ public class FlowerExperience : MonoBehaviour
     private SpriteRenderer mySpriteRenderer;
 
     public event Action<float, float> OnExpReceived;
+    public event Action<int> OnLevelUP;
 
     [Header("Sprites")]
     [SerializeField] private GameObject flower;
@@ -39,6 +40,7 @@ public class FlowerExperience : MonoBehaviour
     void Start()
     {
         ReceiveExperience(0); // so pra atualizar o slider
+        OnLevelUP(level);
     }
 
     private void UpdateSpriteImage()
@@ -68,6 +70,7 @@ public class FlowerExperience : MonoBehaviour
     {
         level++;
         expToLevel *= expFactor + expLevelFactor;
+        OnLevelUP?.Invoke(level);
         //dopra os upgrades;
     }
 }

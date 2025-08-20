@@ -1,9 +1,12 @@
+using TMPro;
 using UnityEngine;
 
 public class ExpProgressionUI : MonoBehaviour
 {
     [SerializeField] private Transform fillExpBar;
     [SerializeField] FlowerExperience experience;
+
+    [SerializeField] private TextMeshProUGUI levelText;
 
     private void Awake()
     {
@@ -15,6 +18,7 @@ public class ExpProgressionUI : MonoBehaviour
         if (experience)
         {
             experience.OnExpReceived += SetExpValue;
+            experience.OnLevelUP += UpdateLevelText;
         }
     }
 
@@ -28,5 +32,10 @@ public class ExpProgressionUI : MonoBehaviour
         float t = current / max;
         t = Mathf.Clamp01(t);
         fillExpBar.localScale = new Vector3(t, 1f, 1f);
+    }
+
+    private void UpdateLevelText(int level)
+    {
+        levelText.text = "Level " + level.ToString();
     }
 }

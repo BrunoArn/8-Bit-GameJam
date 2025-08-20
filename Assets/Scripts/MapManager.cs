@@ -31,8 +31,8 @@ public class MapManager : MonoBehaviour
             Debug.Log("ta sem mapa");
             return;
         }
-
-        var choosenMap = availableMaps[UnityEngine.Random.Range(0, availableMaps.Count - 1)];
+        int randomMap = UnityEngine.Random.Range(0, availableMaps.Count);
+        var choosenMap = availableMaps[randomMap];
         // usedMaps.Add(choosenMap.mapId);
 
         if (actualMap != null)

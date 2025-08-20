@@ -8,7 +8,6 @@ public class PlayerShooting : MonoBehaviour
 {
     [SerializeField] private GameObject projectilePrefab;
 
-    [SerializeField] private Transform shootOrigin;
     [SerializeField] private float spawnDistance = 0.06f;
     [SerializeField] private float fireRate = 0.5f;
     private float fireCooldown = 0f;
@@ -53,7 +52,7 @@ public class PlayerShooting : MonoBehaviour
         else
             lastAim = new Vector2(0f, Mathf.Sign(lastAim.y));
 
-        spawnPos = shootOrigin.position + (Vector3)(lastAim.normalized * spawnDistance);
+        spawnPos = transform.position + (Vector3)(lastAim.normalized * spawnDistance);
         Vector3 direction = lastAim.normalized;
         projectileZAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
     }

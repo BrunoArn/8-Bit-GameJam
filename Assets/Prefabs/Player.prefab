@@ -50,6 +50,7 @@ GameObject:
   - component: {fileID: 8720544107065819987}
   - component: {fileID: 7484563160983396223}
   - component: {fileID: 7563453258213575868}
+  - component: {fileID: 4809752645851939580}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -120,7 +121,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 0
   m_Sprite: {fileID: 2948111035323924614, guid: e0c27317eef9d46b09521a30a98dba07, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -267,7 +268,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 3667250022486202770, guid: 23955a10f42e06245be8e218babea0f3, type: 3}
-  shootOrigin: {fileID: 3862064948654577464}
   spawnDistance: 1
   fireRate: 0.5
 --- !u!95 &7484563160983396223
@@ -317,6 +317,18 @@ MonoBehaviour:
   - {fileID: 985205284, guid: 412595d0a9b88445d83912bbbf64d13a, type: 3}
   - {fileID: 985205284, guid: 412595d0a9b88445d83912bbbf64d13a, type: 3}
   upgradesList: []
+--- !u!210 &4809752645851939580
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6041920558425495241}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 5
+  m_SortAtRoot: 0
 --- !u!1 &7927408811830978310
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,7 +355,7 @@ Transform:
   m_GameObject: {fileID: 7927408811830978310}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f62b91b5a97cef64fae4bb42ae04ff5e, type: 3}
-  m_Name: Mapa 1
+  m_Name: Map Easy 0
   m_EditorClassIdentifier: Assembly-CSharp::MapaData
-  mapId: 1
+  mapId: 0
   dificulty: 1
   mapType: 0
-  mapPrefab: {fileID: 766109938831331912, guid: 36cd487ef1e799c4cbef9838ced3c063, type: 3}
+  mapPrefab: {fileID: 6384517646781769035, guid: b2738e00b9793e843b22541f50c9c997, type: 3}

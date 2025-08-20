@@ -5,7 +5,10 @@ public class EnemiesManager : MonoBehaviour
 {
     private readonly List<GameObject> enemiesList = new();
 
-    private void Start() {
+    [SerializeField] GameEvent enemiesDefeated;
+
+    private void Start()
+    {
         GetAllChildren();
     }
 
@@ -28,7 +31,7 @@ public class EnemiesManager : MonoBehaviour
         enemiesList.Remove(deadEnemy);
         if (enemiesList.Count == 0)
         {
-            Debug.Log("acabou o futebol");
+            enemiesDefeated.Raise();
         }
     }
 }
