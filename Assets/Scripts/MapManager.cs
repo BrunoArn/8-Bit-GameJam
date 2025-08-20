@@ -9,16 +9,10 @@ public class MapManager : MonoBehaviour
     [SerializeField] private Transform mapSpawnPoint;
     [SerializeField] private FlowerExperience playerExperience;
 
-    [SerializeField] private LevelHole hole;
-
     private int mapIndex = 0;
     //private List<String> usedMaps = new List<String>();
     [SerializeField] private GameObject actualMap;
 
-    private void Start()
-    {
-        hole.OnNextLevelTrigger += SpawnNextMap;
-    }
 
     public void SpawnNextMap()
     {

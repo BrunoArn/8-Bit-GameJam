@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class LevelHole : MonoBehaviour
 {
-    public event Action OnNextLevelTrigger;
+    [SerializeField] GameEvent OnNextLevelTrigger;
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<PlayerController>())
         {
-            OnNextLevelTrigger.Invoke();
+            OnNextLevelTrigger.Raise();
         }
     }
 }
