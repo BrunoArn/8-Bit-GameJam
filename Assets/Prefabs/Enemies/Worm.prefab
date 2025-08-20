@@ -33,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 964433879923710371}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.12, y: -1.96, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -125,8 +125,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2
   walkRadius: 7
-  waitToMove: 1.5
+  waitToMove: 0.5
   tilemap: {fileID: 0}
+  borderOffSetPositive: {x: 0.8, y: 1}
+  borderOffSetNegative: {x: 0.8, y: 0.5}
 --- !u!114 &2172133982385741458
 MonoBehaviour:
   m_ObjectHideFlags: 0

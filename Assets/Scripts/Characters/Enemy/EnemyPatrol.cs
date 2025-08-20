@@ -51,20 +51,39 @@ public class EnemyPatrol : MonoBehaviour
 
     private void SetNewTargetPosition()
     {
+
         BoundsInt bounds = tilemap.cellBounds;
 
         Vector3 worldMin = tilemap.transform.TransformPoint(bounds.min);
         Vector3 worldMax = tilemap.transform.TransformPoint(bounds.max);
 
-        targetPosition = GetRandomPositionNear(transform.position);
+        var nextTargetPosition = GetRandomPositionNear(transform.position);
         //Debug.Log($"target position is: [{targetPosition.x}] X, [{targetPosition.y}] Y");
-
-        targetPosition.x = Mathf.Clamp(targetPosition.x, worldMin.x + borderOffSetPositive.x, worldMax.x - borderOffSetNegative.x);
-        targetPosition.y = Mathf.Clamp(targetPosition.y, worldMin.y + borderOffSetPositive.y, worldMax.y - borderOffSetNegative.y);
-
+        nextTargetPosition.x = Mathf.Clamp(nextTargetPosition.x, worldMin.x + borderOffSetPositive.x, worldMax.x - borderOffSetNegative.x);
+        nextTargetPosition.y = Mathf.Clamp(nextTargetPosition.y, worldMin.y + borderOffSetPositive.y, worldMax.y - borderOffSetNegative.y);
         //Debug.Log($"world position is [minX {worldMin.x}, maxX {worldMax.x}], [minY{worldMin.y}, maxY {worldMax.y}]\n");
-
         //Debug.Log($"target position after clamp is: [{targetPosition.x}] X, [{targetPosition.y}] Y");
+        if (IsPathClear(transform.position, nextTargetPosition))
+        {
+            Debug.Log("da pra apssar");
+            targetPosition = nextTargetPosition;
+        }
+        else
+        {
+            Debug.Log("nao da pra apssar");
+            SetNewTargetPosition();
+        }
+    }
+
+    private bool IsPathClear(Vector2 from, Vector2 to)
+    {
+        Vector2 direction = to - from;
+        float distance = direction.magnitude;
+
+        RaycastHit2D hit = Physics2D.Raycast(from, direction.normalized, distance, LayerMask.GetMask("Ground"));
+        Debug.DrawLine(from, to, Color.green);
+
+        return hit.collider == null;
     }
 
     private Vector2 GetRandomPositionNear(Vector2 center)
