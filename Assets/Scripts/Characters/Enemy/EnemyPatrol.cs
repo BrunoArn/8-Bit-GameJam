@@ -69,7 +69,7 @@ public class EnemyPatrol : MonoBehaviour
         }
         else
         {
-            SetNewTargetPosition();
+            targetPosition = transform.position;
         }
     }
 
