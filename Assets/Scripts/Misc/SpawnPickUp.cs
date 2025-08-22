@@ -13,6 +13,11 @@ public class SpawnPickUp : MonoBehaviour
         objectHealth.onDeath += LootRoll;
     }
 
+    void OnDisable()
+    {
+        objectHealth.onDeath -= LootRoll;
+    }
+
     private void SpawnItem(GameObject itemPrefab)
     {
         Instantiate(itemPrefab, transform.position, quaternion.identity);

@@ -210,10 +210,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   extraDamage: 0
-  projectileSpeedMultiplier: 1
+  projectileSpeedMultiplier: 0
   extraMovespeed: 0
   extraFireRate: 0
-  extraFireDistance: 3
+  extraFireDistance: 0
 --- !u!114 &884037560711427654
 MonoBehaviour:
   m_ObjectHideFlags: 0
