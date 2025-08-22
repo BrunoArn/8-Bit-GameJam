@@ -308,7 +308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   experience: 0
   level: 1
-  expToLevel: 10
+  expToLevel: 4
   expLevelFactor: 0.1
   flower: {fileID: 7927408811830978310}
   sprites:
