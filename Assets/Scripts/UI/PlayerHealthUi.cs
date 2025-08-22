@@ -15,6 +15,10 @@ public class PlayerHealthUi : MonoBehaviour
         if (!playerHealth) Debug.Log("faltando player");
     }
 
+    private void Start() {
+        BuildHearts();
+    }
+
     void OnEnable()
     {
         if (playerHealth)
@@ -33,13 +37,14 @@ public class PlayerHealthUi : MonoBehaviour
         }
     }
 
-    private void Start()
+    public void BuildHearts()
     {
-        BuildHearts();
-    }
+        foreach (Transform child in transform)
+        {
+            containerList.Remove(child.GetComponent<HeartContainerUi>());
+            Destroy(child.gameObject);
+        }
 
-    private void BuildHearts()
-    {
         for (int i = 0; i < playerHealth.maxHealth; i++)
         {
             var slot = Instantiate(heartPrefab, this.transform);

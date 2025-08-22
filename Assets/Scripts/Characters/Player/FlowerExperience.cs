@@ -78,6 +78,15 @@ public class FlowerExperience : MonoBehaviour
     private void SpawnPowerUp()
     {
         int randomUpgrade = UnityEngine.Random.Range(0, upgradesList.Count);
-        Instantiate(upgradesList[randomUpgrade], transform.position + new Vector3(0,1,0), Quaternion.identity);
+        Instantiate(upgradesList[randomUpgrade], transform.position + new Vector3(0, 1, 0), Quaternion.identity);
+    }
+
+    public void ResetLevel()
+    {
+        level = 1;
+        expToLevel = 10;
+        OnLevelUP?.Invoke(level);
+        experience = 0;
+        ReceiveExperience(0);
     }
 }

@@ -6454,6 +6454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemiesManager
   enemiesDefeated: {fileID: 11400000, guid: 01e6e108b521831478a986705eb0b29d, type: 2}
+  enemiesKC: {fileID: 11400000, guid: ebabb946dd0325b4d89c203a6f516bc4, type: 2}
 --- !u!1 &8926181127309298521
 GameObject:
   m_ObjectHideFlags: 0

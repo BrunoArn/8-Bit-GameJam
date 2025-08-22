@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ExpProgressionUI : MonoBehaviour
 {
@@ -31,7 +32,7 @@ public class ExpProgressionUI : MonoBehaviour
     {
         float t = current / max;
         t = Mathf.Clamp01(t);
-        fillExpBar.localScale = new Vector3(t, 1f, 1f);
+        fillExpBar.GetComponent<Slider>().value = t;
     }
 
     private void UpdateLevelText(int level)

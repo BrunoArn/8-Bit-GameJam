@@ -1,4 +1,5 @@
 {
+    "version": 1,
     "name": "PlayerControls",
     "maps": [
         {
@@ -134,6 +135,34 @@
                     "action": "Fire",
                     "isComposite": false,
                     "isPartOfComposite": true
+                }
+            ]
+        },
+        {
+            "name": "UI",
+            "id": "4d4ab5f7-9618-424b-babc-6d855dce64ff",
+            "actions": [
+                {
+                    "name": "Restart",
+                    "type": "Button",
+                    "id": "67bfafd3-adea-49c3-a2db-e7d7f5c6772c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "99ff92b1-a3fb-4529-99b6-4c2284245b91",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Restart",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

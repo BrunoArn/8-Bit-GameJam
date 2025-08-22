@@ -15,6 +15,10 @@ public class UpgradeUISlot : MonoBehaviour
 
     public void Initialize(string text)
     {
+        if (textUI == null)
+        {
+            Debug.Log("text ui é null");
+        }
         textUI.text = text;
     }
 

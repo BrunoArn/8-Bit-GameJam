@@ -24,7 +24,10 @@ public class Health : MonoBehaviour
         if (currentHealth <= 0)
         {
             onDeath?.Invoke(this.gameObject);
-            Destroy(this.gameObject);
+            if (!this.gameObject.CompareTag("Player"))
+            {
+                Destroy(this.gameObject);
+            }
         }
     }
 

@@ -18,23 +18,33 @@ public class Upgrades : MonoBehaviour
         switch (upgradeType)
         {
             case UpgradeType.damage:
-                this.extraDamage += extraDamage;
+                Debug.Log("entrei");
+                this.extraDamage += (int)amount; 
                 break;
             case UpgradeType.projectileSpeed:
-                this.projectileSpeedMultiplier += projectileSpeedMultiplier;
+                this.projectileSpeedMultiplier += amount;
                 break;
             case UpgradeType.fireRate:
-                this.extraFireRate += extraFireRate;
+                this.extraFireRate += amount;
                 break;
             case UpgradeType.fireDistance:
-                this.extraFireDistance += extraFireDistance;
+                this.extraFireDistance += amount;
                 break;
             case UpgradeType.moveSpeed:
-                this.extraMovespeed += extraMovespeed;
+                this.extraMovespeed += amount;
                 break;
             default:
                 break;
         }
         OnUpgrade.Invoke(upgradeType);
+    }
+
+    public void UpgradeReset()
+    {
+        extraDamage = 0;
+        projectileSpeedMultiplier = 1.0f;
+        extraMovespeed = 0f;
+        extraFireRate = 0f;
+        extraFireDistance = 0f;
     }
 }

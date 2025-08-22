@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -9,9 +10,15 @@ public class MapManager : MonoBehaviour
     [SerializeField] private Transform mapSpawnPoint;
     [SerializeField] private FlowerExperience playerExperience;
 
+    [SerializeField] private AnimationClip transitionAnimation;
+    [SerializeField] private GameObject transition;
+    [SerializeField] private GameObject positionHolder;
+
     private int mapIndex = 0;
     //private List<String> usedMaps = new List<String>();
     [SerializeField] private GameObject actualMap;
+    [SerializeField] private GameEvent transitionFinish;
+    [SerializeField] private GameEvent transitionHalfFInished;
 
 
     public void SpawnNextMap()
@@ -35,11 +42,31 @@ public class MapManager : MonoBehaviour
         var choosenMap = availableMaps[randomMap];
         // usedMaps.Add(choosenMap.mapId);
 
+        StartCoroutine(TransitionRoutine(choosenMap.mapPrefab));
+    }
+
+    public void SpawnAnyMap(GameObject map)
+    {
+        StartCoroutine(TransitionRoutine(map));
+    }
+
+    private IEnumerator TransitionRoutine(GameObject map)
+    {
+        GameObject transitionInstance = Instantiate(transition, positionHolder.transform);
+
+        yield return new WaitForSeconds(transitionAnimation.length / 2);
+        transitionHalfFInished.Raise();
+
         if (actualMap != null)
         {
             Destroy(actualMap);
         }
-        actualMap = Instantiate(choosenMap.mapPrefab, mapSpawnPoint.position, Quaternion.identity);
+        actualMap = Instantiate(map, mapSpawnPoint.position, Quaternion.identity);
+
+        yield return new WaitForSeconds(transitionAnimation.length / 2);
+
+        Destroy(transitionInstance);
+        transitionFinish.Raise();
     }
 
 }
