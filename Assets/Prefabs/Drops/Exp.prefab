@@ -133,7 +133,7 @@ MonoBehaviour:
   heightY: 1.5
   popDuration: 0.3
   pickUpDistance: 5
-  accelerationRate: 1
+  accelerationRate: 3
   playerOffSet: {x: 0, y: 0.5, z: 0}
   playerTransformRef: {fileID: 11400000, guid: b331cb235f137c448b7c2074f7ef1888, type: 2}
 --- !u!114 &6588147893467305752

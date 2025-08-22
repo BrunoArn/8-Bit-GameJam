@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class PickUps : MonoBehaviour
 {
+    [Header("Curve animation info")]
     [SerializeField] private AnimationCurve animCurve;
     [SerializeField] private float heightY = 1.5f;
     [SerializeField] private float popDuration = 1f;
-
+    [Header("PickUP animation")]
     [SerializeField] private float pickUpDistance = 5f;
     [SerializeField] private float accelerationRate = .2f;
-
     [SerializeField] private Vector3 playerOffSet = new(0f, 0.5f);
-
+    [Header("Player Position")]
     [SerializeField] TransformReferenceSO playerTransformRef;
 
 

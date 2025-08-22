@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerProjectile : MonoBehaviour
 {
+    [Header("Projectile Status")]
     public int damage = 1;
     public float projectileSpeed = 12f;
     [SerializeField] float projectileRange = 10f;

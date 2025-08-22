@@ -2,11 +2,12 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("Games info")]
     [SerializeField] private GameObject player;
-    private MapManager mapManager;
     [SerializeField] private GameObject starterMap;
     [SerializeField] private Vector3 gameStartPosition;
     [SerializeField] private GameObject healthUI;
+    private MapManager mapManager;
 
     [SerializeField] private IntReference enemiesKC;
     [SerializeField] private GameEvent playerDeath;

@@ -6,8 +6,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerShooting : MonoBehaviour
 {
+    [Header("Projectile Prefabs")]
     [SerializeField] private GameObject projectilePrefab;
-
+    [Header("Projectile infos")]
     [SerializeField] private float spawnDistance = 0.06f;
     [SerializeField] private float fireRate = 0.5f;
     private float fireCooldown = 0f;

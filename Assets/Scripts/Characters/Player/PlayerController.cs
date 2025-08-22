@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Player actions")]
     [SerializeField] PlayerMovement movement;
     [SerializeField] PlayerShooting shoot;
     [SerializeField] TransformReferenceSO playerTransformRef;

@@ -6,21 +6,23 @@ using UnityEngine;
 
 public class MapManager : MonoBehaviour
 {
+    [Header("Map infos")]
     [SerializeField] private MapDatabase mapDatabase;
     [SerializeField] private Transform mapSpawnPoint;
+    [SerializeField] private GameObject actualMap;
+    [Header("Player infos")]
     [SerializeField] private FlowerExperience playerExperience;
 
+    [Header("Transition Info")]
     [SerializeField] private AnimationClip transitionAnimation;
     [SerializeField] private GameObject transition;
     [SerializeField] private GameObject positionHolder;
-
-    private int mapIndex = 0;
-    //private List<String> usedMaps = new List<String>();
-    [SerializeField] private GameObject actualMap;
     [SerializeField] private GameEvent transitionFinish;
     [SerializeField] private GameEvent transitionHalfFInished;
 
-
+    private int mapIndex = 0;
+    //private List<String> usedMaps = new List<String>();
+    
     public void SpawnNextMap()
     {
         mapIndex++;
