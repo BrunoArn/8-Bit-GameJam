@@ -8,6 +8,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] TransformReferenceSO playerTransformRef;
 
     private PlayerControls playerControls;
+    
+    [Header("Player animations")]
+    private Animator myAnimator;
+    [SerializeField] private Health health;
 
     private void Awake()
     {
@@ -15,15 +19,23 @@ public class PlayerController : MonoBehaviour
         movement.playerControls = playerControls;
         shoot.playerControls = playerControls;
         playerTransformRef.Value = this.transform;
+
+        myAnimator = GetComponent<Animator>();
+        health.onTakeDamage += HurtAnimation;
     }
 
     void OnEnable()
     {
         playerControls.Enable();
-        
+
     }
     void OnDisable()
     {
         playerControls.Disable();
+    }
+
+    private void HurtAnimation()
+    {
+        myAnimator.SetTrigger("TakeDamage");
     }
 }

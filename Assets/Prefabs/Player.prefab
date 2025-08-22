@@ -229,6 +229,7 @@ MonoBehaviour:
   movement: {fileID: 190919385134394703}
   shoot: {fileID: 8720544107065819987}
   playerTransformRef: {fileID: 11400000, guid: b331cb235f137c448b7c2074f7ef1888, type: 2}
+  health: {fileID: 8835239122752927416}
 --- !u!114 &190919385134394703
 MonoBehaviour:
   m_ObjectHideFlags: 0

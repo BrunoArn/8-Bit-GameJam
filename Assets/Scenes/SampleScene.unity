@@ -896,11 +896,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MapManager
   mapDatabase: {fileID: 11400000, guid: d2541c36638bbf14b800e7e6d18b63c1, type: 2}
   mapSpawnPoint: {fileID: 760416571}
+  actualMap: {fileID: 1551084644}
   playerExperience: {fileID: 695729231}
   transitionAnimation: {fileID: 7400000, guid: 8603f7be799847c4b8bc43710485a945, type: 2}
   transition: {fileID: 5159361183361146881, guid: b8fe722a54bc7a248b0234823fe98d23, type: 3}
   positionHolder: {fileID: 211228639}
-  actualMap: {fileID: 1551084644}
   transitionFinish: {fileID: 11400000, guid: 1dd4121bdb414264087974f0ea4bf09c, type: 2}
   transitionHalfFInished: {fileID: 11400000, guid: 5919e9584b2c21547be7ab53b1449064, type: 2}
 --- !u!4 &760416571
