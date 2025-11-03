@@ -30,22 +30,26 @@ public class PickUps : MonoBehaviour
     {
         StartCoroutine(AnimCurveSpawnRoutine());
     }
-    
+
 
     private void Update()
     {
         Vector3 playerPos = playerTransformRef.Value.position - playerOffSet;
 
-        if (Vector3.Distance(transform.position, playerPos) < pickUpDistance) {
+        if (Vector3.Distance(transform.position, playerPos) < pickUpDistance)
+        {
             moveDir = (playerPos - transform.position).normalized;
             moveSpeed += accelerationRate;
-        } else {
+        }
+        else
+        {
             moveDir = Vector3.zero;
             moveSpeed = 0f;
         }
     }
 
-    private void FixedUpdate() {
+    private void FixedUpdate()
+    {
         rb.linearVelocity = moveSpeed * Time.fixedDeltaTime * moveDir;
     }
 
@@ -74,6 +78,11 @@ public class PickUps : MonoBehaviour
             yield return null;
         }
         GetComponent<Collider2D>().enabled = true;
+    }
+
+    public void DestroyThisObject()
+    {
+        Destroy(this.gameObject);
     }
 
 }

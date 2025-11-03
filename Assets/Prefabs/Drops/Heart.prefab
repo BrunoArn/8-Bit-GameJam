@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6420089035668364628}
   - component: {fileID: 2866723216975949902}
   - component: {fileID: 3689046208982418473}
+  - component: {fileID: 1394797926569418874}
   m_Layer: 0
   m_Name: Heart
   m_TagString: Untagged
@@ -157,6 +158,7 @@ MonoBehaviour:
   popDuration: 0.3
   pickUpDistance: 5
   accelerationRate: 0.2
+  playerOffSet: {x: 0, y: 0.5, z: 0}
   playerTransformRef: {fileID: 11400000, guid: b331cb235f137c448b7c2074f7ef1888, type: 2}
 --- !u!114 &6420089035668364628
 MonoBehaviour:
@@ -253,3 +255,31 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1394797926569418874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4678068514249304371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cd763ddbed6cfa49b944538447789ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameEventListener
+  Event: {fileID: 11400000, guid: 5919e9584b2c21547be7ab53b1449064, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7303411985406575996}
+        m_TargetAssemblyTypeName: PickUps, Assembly-CSharp
+        m_MethodName: DestroyThisObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

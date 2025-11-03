@@ -270,7 +270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 3667250022486202770, guid: 23955a10f42e06245be8e218babea0f3, type: 3}
-  spawnDistance: 1
+  spawnDistance: 0.2
   fireRate: 0.5
 --- !u!95 &7484563160983396223
 Animator:

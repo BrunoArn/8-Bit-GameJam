@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6588147893467305752}
   - component: {fileID: 7670430395781517098}
   - component: {fileID: -7703806310559875412}
+  - component: {fileID: 6734972735938171721}
   m_Layer: 0
   m_Name: Exp
   m_TagString: Untagged
@@ -133,7 +134,7 @@ MonoBehaviour:
   heightY: 1.5
   popDuration: 0.3
   pickUpDistance: 5
-  accelerationRate: 3
+  accelerationRate: 10
   playerOffSet: {x: 0, y: 0.5, z: 0}
   playerTransformRef: {fileID: 11400000, guid: b331cb235f137c448b7c2074f7ef1888, type: 2}
 --- !u!114 &6588147893467305752
@@ -212,3 +213,31 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &6734972735938171721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3981367317126196686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cd763ddbed6cfa49b944538447789ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameEventListener
+  Event: {fileID: 11400000, guid: 5919e9584b2c21547be7ab53b1449064, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7911137003654150477}
+        m_TargetAssemblyTypeName: PickUps, Assembly-CSharp
+        m_MethodName: DestroyThisObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
