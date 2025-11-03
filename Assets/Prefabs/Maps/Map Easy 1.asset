@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f62b91b5a97cef64fae4bb42ae04ff5e, type: 3}
+  m_Name: Map Easy 1
+  m_EditorClassIdentifier: Assembly-CSharp::MapaData
+  mapId: 1
+  dificulty: 1
+  mapType: 0
+  mapPrefab: {fileID: 5617106621055120762, guid: 36cd487ef1e799c4cbef9838ced3c063, type: 3}

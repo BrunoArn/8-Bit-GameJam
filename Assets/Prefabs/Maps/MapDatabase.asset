@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85ce91ca4687a9d47be0fe2c146e7dc8, type: 3}
+  m_Name: MapDatabase
+  m_EditorClassIdentifier: Assembly-CSharp::MapDatabase
+  mapsAvailable:
+  - {fileID: 11400000, guid: 64e9b07bd7229964dae7c2cf610d7a4d, type: 2}
+  - {fileID: 11400000, guid: 36ca44de46ea76a4cbf35022060a171f, type: 2}
+  - {fileID: 11400000, guid: 9e201e6581b0dd74c9676458fd6cdf5c, type: 2}
+  - {fileID: 11400000, guid: ea40d15e15c7f61468e6fbdc0092d43e, type: 2}
