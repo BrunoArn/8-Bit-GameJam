@@ -2,27 +2,26 @@
   <img src="ReadImages/banner.png" width="660"/>
 </p>
 
+**Bloomancer** is an action roguelike where you play as a daring botanist-warrior fighting to reclaim his blooming garden from hordes of invading worms!
 
-**Bloomancer** é um roguelike de ação onde você assume o papel de um botânico-guerreiro lutando para retomar seu jardim tomado por vermes!
-
-Movimente-se por arenas em constante mudança, enfrentando hordas de inimigos e conquistando novos poderes a cada rodada.  
-Cada partida oferece novos layouts e desafios táticos para testar suas habilidades.
+Move through ever-changing arenas, blasting your way through endless waves of enemies and gaining new powers as you grow stronger.  
+Each run rearranges the maps, offering new layouts and tactical challenges every time.
 
 ##
 
 - 🎮 **Gameplay**
-  - **Objetivo:** Sobreviva o máximo possível enquanto protege o jardim de ondas infinitas de vermes.
-  - **Progressão:** Ganhe novas habilidades e power-ups conforme o personagem evolui.
-  - **Desafio:** A dificuldade aumenta a cada onda de inimigos.
-  - **Variedade:** Mapas semi-procedurais garantem que nenhuma partida seja igual à anterior.
+  - **Objective:** Survive as long as you can while protecting your garden from waves of worms.
+  - **Progression:** Gain new abilities and power-ups as your character levels up.
+  - **Challenge:** Difficulty increases with each new wave.
+  - **Variety:** Semi-procedural maps ensure every run feels fresh and unique.
 
   
   ![Demo](ReadImages/gameplay.gif)
 
 - 🧠 **Features**
-  - Semi-procedural maps: mapas pré-criados embaralhados em ordem aleatória a cada partida.  
-  - Dynamic power-ups: novas habilidades desbloqueadas conforme o personagem sobe de nível.  
-  - Endless waves: enfrente o máximo de vermes que puder antes de sucumbir!  
+  - Semi-procedural maps with randomized order for each run  
+  - Dynamic power-ups that evolve your abilities  
+  - Endless waves of enemies for continuous challenge  
 
 ## 🎮 Controls
 
